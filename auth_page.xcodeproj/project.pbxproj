@@ -160,20 +160,20 @@
 		C6E4A19129D8A79100E7F772 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				C6E4A19629D8AF5900E7F772 /* Custom */,
+				C6E4A19629D8AF5900E7F772 /* Customs */,
 				C60223A029D88CB0000058C4 /* Screen */,
 				C6E4A19229D8A97D00E7F772 /* UIColor+Extension.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
 		};
-		C6E4A19629D8AF5900E7F772 /* Custom */ = {
+		C6E4A19629D8AF5900E7F772 /* Customs */ = {
 			isa = PBXGroup;
 			children = (
 				C6E4A19729D8AF6400E7F772 /* CustomButton.swift */,
 				C6E4A19929D8AF7500E7F772 /* CustomTitle.swift */,
 			);
-			path = Custom;
+			path = Customs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -16,7 +16,7 @@ class MainScreenViewController: UIViewController {
         return imageView
     }()
     
-    let textTitle = CustomTitle(text: "Lorem ipsum",
+    let topTitle = CustomTitle(text: "Lorem ipsum",
                                   color: .white)
     let bottomTitle = CustomTitle(text: "Lorem ipsum",
                                   color: .white)
@@ -34,9 +34,7 @@ class MainScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(RGBcolor: Constants.backgroundColor)
-        setupLogoImage()
-        setupButtons()
-        textTitleSetup()
+        setupViews()
     }
     
     
@@ -44,6 +42,14 @@ class MainScreenViewController: UIViewController {
 
 //MARK: views setup
 extension MainScreenViewController {
+    
+    func setupViews() {
+        setupLogoImage()
+        setupLoginButtons()
+        topTitleSetup()
+        submitButtonSetup()
+        bottomTitleSetup()
+    }
     
     //MARK: Logo setup
     func setupLogoImage() {
@@ -62,25 +68,17 @@ extension MainScreenViewController {
     }
     
     //MARK: Buttons setup
-    func setupButtons() {
+    func setupLoginButtons() {
         
         view.addSubview(userNameButton)
         view.addSubview(passwordButton)
-        view.addSubview(submitButton)
+        
         
         userNameButton.translatesAutoresizingMaskIntoConstraints = false
         passwordButton.translatesAutoresizingMaskIntoConstraints = false
-        submitButton.translatesAutoresizingMaskIntoConstraints = false
+        
         
         NSLayoutConstraint.activate([
-            userNameButton.topAnchor.constraint(equalTo: logoImage.bottomAnchor,
-                                                constant: 50),
-            userNameButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,
-                                                    constant: Constants.Sizes.standartPadding),
-            userNameButton.trailingAnchor.constraint(equalTo: view.trailingAnchor,
-                                                     constant: -Constants.Sizes.standartPadding),
-            userNameButton.heightAnchor.constraint(equalToConstant: 80),
-            
             
             passwordButton.topAnchor.constraint(equalTo: userNameButton.bottomAnchor,
                                                 constant: 20),
@@ -99,37 +97,50 @@ extension MainScreenViewController {
                                                      constant: -Constants.Sizes.standartPadding),
             userNameButton.heightAnchor.constraint(equalToConstant: 80),
             
-            
-            submitButton.bottomAnchor.constraint(equalTo: view.bottomAnchor,
-                                                 constant: -130),
+        ])
+        
+    }
+    
+    func submitButtonSetup() {
+        view.addSubview(submitButton)
+        submitButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            submitButton.topAnchor.constraint(equalTo: topTitle.bottomAnchor,
+                                              constant: 50),
             submitButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,
-                                                    constant: Constants.Sizes.standartPadding),
+                                                  constant: Constants.Sizes.standartPadding),
             submitButton.trailingAnchor.constraint(equalTo: view.trailingAnchor,
-                                                     constant: -Constants.Sizes.standartPadding),
+                                                   constant: -Constants.Sizes.standartPadding),
             submitButton.heightAnchor.constraint(equalToConstant: 80),
         ])
     }
     
-    
     //MARK: Titles setup
-    func textTitleSetup() {
+    func topTitleSetup() {
         
-        view.addSubview(textTitle)
-        view.addSubview(bottomTitle)
+        view.addSubview(topTitle)
         
-        bottomTitle.translatesAutoresizingMaskIntoConstraints = false
-        textTitle.translatesAutoresizingMaskIntoConstraints = false
+        topTitle.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            textTitle.topAnchor.constraint(equalTo: passwordButton.bottomAnchor,
+            topTitle.topAnchor.constraint(equalTo: passwordButton.bottomAnchor,
                                            constant: 20),
-            textTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            
-            bottomTitle.bottomAnchor.constraint(equalTo: view.bottomAnchor,
-                                                constant: -100),
-            bottomTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            topTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
     }
     
+    func bottomTitleSetup() {
+        
+        view.addSubview(bottomTitle)
+        
+        bottomTitle.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            bottomTitle.bottomAnchor.constraint(equalTo: submitButton.bottomAnchor,
+                                                constant: 40),
+            bottomTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        ])
+    }
     
 }
