@@ -8,7 +8,6 @@ There is no any special setup instructions. Just download the project from githu
 
 ## Usage
 This project can be used as an example of creating app layout with code.
-В этом разделе опишите, как пользователь может использовать ваш проект. Укажите, какие функции он предоставляет и как пользователь может взаимодействовать с ним. Вы можете приложить примеры кода и скриншоты для того, чтобы проще было понять, как ваш проект работает.
 
 ## Сontribution
 This project will be useful for not really experienced users in UIkit and IOS development, and for those, who tries to learn auto-layout and layout creating with code.
