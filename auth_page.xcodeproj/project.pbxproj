@@ -15,6 +15,10 @@
 		C602238629D88C8A000058C4 /* auth_pageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C602238529D88C8A000058C4 /* auth_pageTests.swift */; };
 		C602239029D88C8A000058C4 /* auth_pageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C602238F29D88C8A000058C4 /* auth_pageUITests.swift */; };
 		C602239229D88C8A000058C4 /* auth_pageUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C602239129D88C8A000058C4 /* auth_pageUITestsLaunchTests.swift */; };
+		C6E4A19329D8A97D00E7F772 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E4A19229D8A97D00E7F772 /* UIColor+Extension.swift */; };
+		C6E4A19529D8ADB700E7F772 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E4A19429D8ADB700E7F772 /* Constants.swift */; };
+		C6E4A19829D8AF6400E7F772 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E4A19729D8AF6400E7F772 /* CustomButton.swift */; };
+		C6E4A19A29D8AF7500E7F772 /* CustomTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E4A19929D8AF7500E7F772 /* CustomTitle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		C602238B29D88C8A000058C4 /* auth_pageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = auth_pageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C602238F29D88C8A000058C4 /* auth_pageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = auth_pageUITests.swift; sourceTree = "<group>"; };
 		C602239129D88C8A000058C4 /* auth_pageUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = auth_pageUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C6E4A19229D8A97D00E7F772 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		C6E4A19429D8ADB700E7F772 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C6E4A19729D8AF6400E7F772 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		C6E4A19929D8AF7500E7F772 /* CustomTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +105,7 @@
 		C602236D29D88C89000058C4 /* auth_page */ = {
 			isa = PBXGroup;
 			children = (
-				C60223A029D88CB0000058C4 /* Screen */,
+				C6E4A19129D8A79100E7F772 /* UI */,
 				C602239F29D88CA2000058C4 /* Resources */,
 				C602239E29D88C9E000058C4 /* Application */,
 			);
@@ -136,6 +144,7 @@
 				C602237729D88C8A000058C4 /* Assets.xcassets */,
 				C602237929D88C8A000058C4 /* LaunchScreen.storyboard */,
 				C602237C29D88C8A000058C4 /* Info.plist */,
+				C6E4A19429D8ADB700E7F772 /* Constants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -146,6 +155,25 @@
 				C602237229D88C89000058C4 /* MainScreenViewController.swift */,
 			);
 			path = Screen;
+			sourceTree = "<group>";
+		};
+		C6E4A19129D8A79100E7F772 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C6E4A19629D8AF5900E7F772 /* Custom */,
+				C60223A029D88CB0000058C4 /* Screen */,
+				C6E4A19229D8A97D00E7F772 /* UIColor+Extension.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		C6E4A19629D8AF5900E7F772 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				C6E4A19729D8AF6400E7F772 /* CustomButton.swift */,
+				C6E4A19929D8AF7500E7F772 /* CustomTitle.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,9 +306,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6E4A19529D8ADB700E7F772 /* Constants.swift in Sources */,
 				C602237329D88C89000058C4 /* MainScreenViewController.swift in Sources */,
+				C6E4A19829D8AF6400E7F772 /* CustomButton.swift in Sources */,
+				C6E4A19A29D8AF7500E7F772 /* CustomTitle.swift in Sources */,
 				C602236F29D88C89000058C4 /* AppDelegate.swift in Sources */,
 				C602237129D88C89000058C4 /* SceneDelegate.swift in Sources */,
+				C6E4A19329D8A97D00E7F772 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
