@@ -16,19 +16,26 @@ class MainScreenViewController: UIViewController {
         return imageView
     }()
     
+    let submitButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Sign in", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = UIColor(RGBcolor: Constants.Buttons.submitButton)
+        button.layer.cornerRadius = 30
+        button.clipsToBounds = true
+        return button
+    }()
+    
     let topTitle = CustomTitle(text: "Lorem ipsum",
                                   color: .white)
     let bottomTitle = CustomTitle(text: "Lorem ipsum",
                                   color: .white)
-    let userNameButton = CustomButton(buttonName: "Username",
+    let userNameField = CustomField(fieldName: "Username",
                                       color: UIColor(RGBcolor: Constants.Buttons.loginButtonColor),
                                       textColor: .white)
-    let passwordButton = CustomButton(buttonName: "Password",
+    let passwordField = CustomField(fieldName: "Password",
                                       color: UIColor(RGBcolor: Constants.Buttons.loginButtonColor),
                                       textColor: .white)
-    let submitButton = CustomButton(buttonName: "Sign in",
-                                    color: UIColor(RGBcolor: Constants.Buttons.submitButton),
-                                    textColor: .black)
     
     //MARK: ViewdidLoad
     override func viewDidLoad() {
@@ -45,7 +52,7 @@ extension MainScreenViewController {
     
     func setupViews() {
         setupLogoImage()
-        setupLoginButtons()
+        setupTextFields()
         topTitleSetup()
         submitButtonSetup()
         bottomTitleSetup()
@@ -67,55 +74,41 @@ extension MainScreenViewController {
         ])
     }
     
-    //MARK: Buttons setup
-    func setupLoginButtons() {
+    //MARK: TextFields setup
+    func setupTextFields() {
         
-        view.addSubview(userNameButton)
-        view.addSubview(passwordButton)
+        view.addSubview(userNameField)
+        view.addSubview(passwordField)
         
         
-        userNameButton.translatesAutoresizingMaskIntoConstraints = false
-        passwordButton.translatesAutoresizingMaskIntoConstraints = false
+        userNameField.translatesAutoresizingMaskIntoConstraints = false
+        passwordField.translatesAutoresizingMaskIntoConstraints = false
         
         
         NSLayoutConstraint.activate([
             
-            passwordButton.topAnchor.constraint(equalTo: userNameButton.bottomAnchor,
+            passwordField.topAnchor.constraint(equalTo: userNameField.bottomAnchor,
                                                 constant: 20),
-            passwordButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,
+            passwordField.leadingAnchor.constraint(equalTo: view.leadingAnchor,
                                                     constant: Constants.Sizes.standartPadding),
-            passwordButton.trailingAnchor.constraint(equalTo: view.trailingAnchor,
+            passwordField.trailingAnchor.constraint(equalTo: view.trailingAnchor,
                                                      constant: -Constants.Sizes.standartPadding),
-            passwordButton.heightAnchor.constraint(equalToConstant: 80),
+            passwordField.heightAnchor.constraint(equalToConstant: 80),
             
             
-            userNameButton.topAnchor.constraint(equalTo: logoImage.bottomAnchor,
+            userNameField.topAnchor.constraint(equalTo: logoImage.bottomAnchor,
                                                 constant: 50),
-            userNameButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,
+            userNameField.leadingAnchor.constraint(equalTo: view.leadingAnchor,
                                                     constant: Constants.Sizes.standartPadding),
-            userNameButton.trailingAnchor.constraint(equalTo: view.trailingAnchor,
+            userNameField.trailingAnchor.constraint(equalTo: view.trailingAnchor,
                                                      constant: -Constants.Sizes.standartPadding),
-            userNameButton.heightAnchor.constraint(equalToConstant: 80),
+            userNameField.heightAnchor.constraint(equalToConstant: 80),
             
         ])
         
     }
     
-    func submitButtonSetup() {
-        view.addSubview(submitButton)
-        submitButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            submitButton.topAnchor.constraint(equalTo: topTitle.bottomAnchor,
-                                              constant: 50),
-            submitButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,
-                                                  constant: Constants.Sizes.standartPadding),
-            submitButton.trailingAnchor.constraint(equalTo: view.trailingAnchor,
-                                                   constant: -Constants.Sizes.standartPadding),
-            submitButton.heightAnchor.constraint(equalToConstant: 80),
-        ])
-    }
-    
+  
     //MARK: Titles setup
     func topTitleSetup() {
         
@@ -124,7 +117,7 @@ extension MainScreenViewController {
         topTitle.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            topTitle.topAnchor.constraint(equalTo: passwordButton.bottomAnchor,
+            topTitle.topAnchor.constraint(equalTo: passwordField.bottomAnchor,
                                            constant: 20),
             topTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
@@ -143,4 +136,18 @@ extension MainScreenViewController {
         ])
     }
     
+    func submitButtonSetup() {
+        view.addSubview(submitButton)
+        submitButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            submitButton.topAnchor.constraint(equalTo: topTitle.bottomAnchor,
+                                              constant: 50),
+            submitButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,
+                                                  constant: Constants.Sizes.standartPadding),
+            submitButton.trailingAnchor.constraint(equalTo: view.trailingAnchor,
+                                                   constant: -Constants.Sizes.standartPadding),
+            submitButton.heightAnchor.constraint(equalToConstant: 80),
+        ])
+    }
 }
